@@ -21,3 +21,6 @@ class Person {
     print("Color of my biCycle is $color.\n It is $size cm in size.\n its speed is $currentSpeed");
   }
  }
+
+
+ 

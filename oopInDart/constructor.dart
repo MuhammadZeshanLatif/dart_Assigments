@@ -13,3 +13,13 @@ class Student{
   }
 
 }
+ class Home{
+  String? name;
+  double? area;
+  String? color;
+
+  Home(this.name,this.area,this.color);
+  void detail(){
+    print("");
+  }
+ }
