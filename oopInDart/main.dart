@@ -10,3 +10,28 @@ class Person {
         "My  name is $name.\nI am $age years old.\nMy complection is $complection.\nBy profession i am a $profession.");
   }
 }
+ class BiCycle{
+  String? color;
+  int? size;
+  int? currentSpeed;
+  void display(int speed){
+    currentSpeed=speed;
+  }
+  void show(){
+    print("Color of my biCycle is $color.\n It is $size cm in size.\n its speed is $currentSpeed");
+  }
+ }
+ void main(){
+  Person prsn=Person();
+  BiCycle cycle=BiCycle();
+  prsn.name="Zeeshan";
+  prsn.age=24;
+  prsn.complection="Fair";
+  prsn.profession="Software Engineer";
+  prsn.display();
+  cycle.color="Red";
+  cycle.size=5;
+  cycle.display(5);
+  cycle.show();
+}
+ 

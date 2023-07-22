@@ -54,7 +54,7 @@ LogIn() {
 =====================================================""");
         while (isTrue) {
           print(
-              "Press 1 to view students detail.\nPress 2 to add student.\nPress 3 for delete student.\nPress 4 to see your detail.\nPress 5 to edit student detail.\nPress any other key to LogOut.");
+              "Press 1 to view students detail.\nPress 2 to add student.\nPress 3 for delete student.\nPress 4 to see your detail.\nPress 5 to edit student detail.\nPress 6 to search student.\nPress any other key to LogOut.");
           var detail = stdin.readLineSync();
           if (detail == "1") {
             showStudentsDetail();
@@ -66,8 +66,10 @@ LogIn() {
             print("=========================");
             teacherMap[userName].forEach((key, val) => {print("$key : $val")});
             print("=========================");
-          }else if(detail=="5"){
+          } else if (detail == "5") {
             editStudentDetail();
+          } else if (detail == "6") {
+            viewStudent();
           } else {
             main();
             isTrue = false;
@@ -83,7 +85,7 @@ LogIn() {
 =====================================================""");
         while (isTrue) {
           print(
-              "Press 1 to view teachers detail.\nPress 2 to view students detail.\nPress 3 to add teacher.\nPress 4 to add student.\nPress 5 for delete teacher record.\nPress 6 for delete student.\nPress 7 to edit teacher detail.\nPress 8 to edit student detail.\nPress any other key to LogOut.");
+              "Press 1 to view teachers detail.\nPress 2 to view students detail.\nPress 3 to add teacher.\nPress 4 to add student.\nPress 5 for delete teacher record.\nPress 6 for delete student.\nPress 7 to edit teacher detail.\nPress 8 to edit student detail.\nPress 9 to search Teacher.\nPress 10 to search student.\nPress any other key to LogOut.");
           var detail = stdin.readLineSync();
           if (detail == "1") {
             showTeachersDetail();
@@ -101,6 +103,10 @@ LogIn() {
             editTeacherDetail();
           } else if (detail == "8") {
             editStudentDetail();
+          } else if (detail == "9") {
+            viewTeacher();
+          } else if (detail == "10") {
+            viewStudent();
           } else {
             main();
             isTrue = false;
@@ -111,7 +117,7 @@ LogIn() {
         bool isTrue = true;
         print("""=====================================================
 |                                                   |
-|       Welcome $userName to Student Dashboard      |
+|       Welcome $userName to Student Dashboard          |
 |                                                   |
 =====================================================""");
         while (isTrue) {
@@ -210,8 +216,10 @@ studentSignUp() {
       studentMap["2023$rollNo"] = studentDetail;
       studentDetail = {};
       IsBool = false;
+      print('__________________________________');
       print(
-          "Student registerd successfull yor roll number 2023$rollNo is your Unique identity name use it for login.");
+          "Student registerd successfull.Student roll number is 2023$rollNo use it as Unique identity for login.");
+      print('__________________________________');
     }
   }
 }
@@ -249,18 +257,20 @@ showStudentsDetail() {
 deletTeacher() {
   print("Please enter teacher identity for delete teacher data.");
   var teacherDelete = stdin.readLineSync();
-  teacherMap[teacherDelete] = {};
-  passwordsMap[teacherDelete] = {};
+  passwordsMap.remove(teacherDelete);
+  teacherMap.remove(teacherDelete);
   print("$teacherDelete is deleted from list of teacher.");
 }
 
 deletStudent() {
   print("Please enter student roll number for delete teacher data.");
   var studentDelete = stdin.readLineSync();
-  studentMap[studentDelete] = {};
-  passwordsMap[studentDelete] = {};
+  studentMap.remove(studentDelete);
+  passwordsMap.remove(studentDelete);
+  print('__________________________________');
   print(
       "Student heaving roll num $studentDelete is deleted from student list.");
+  print('__________________________________');
 }
 
 editTeacherDetail() {
@@ -329,8 +339,43 @@ editStudentDetail() {
   }
 }
 
-viewTeacher() {}
-viewStudent() {}
+viewTeacher() {
+  print("Enter Name of teacher.");
+  bool flag = true;
+  while (flag) {
+    var userName = stdin.readLineSync();
+    if (teacherMap.containsKey(userName)) {
+      print("This is $userName detail.");
+      teacherMap[userName].forEach((key, val) => {print("$key : $val")});
+      print("=========================");
+      flag = false;
+    } else if (userName == "0") {
+      flag = false;
+    } else {
+      print(
+          "Teacher with name $userName is not exit in teacher list.Enter Agian teacher name.\n Press 0 to exit.");
+    }
+  }
+}
+
+viewStudent() {
+  print("Enter Roll number of student.");
+  bool flag = true;
+  while (flag) {
+    var userName = stdin.readLineSync();
+    if (studentMap.containsKey(userName)) {
+      print("This is the detail of student heaving roll number $userName.");
+      studentMap[userName].forEach((key, val) => {print("$key : $val")});
+      print("=========================");
+      flag = false;
+    } else if (userName == "0") {
+      flag = false;
+    } else {
+      print(
+          "Student heaving roll number $userName is not exit in student list.Enter Agian valid roll number.\n Press 0 to exit.");
+    }
+  }
+}
 
 Exit() {
   print("You are exit");
