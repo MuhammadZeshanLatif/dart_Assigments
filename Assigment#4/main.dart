@@ -1,5 +1,5 @@
 // import 'dart:io';
- import 'dart:math';
+import 'dart:math';
 // Map teacherMap = {};
 // Map teacherDetail = {};
 // Map studentMap = {};
@@ -403,28 +403,31 @@
 //   print("You are exit");
 //   exit(0);
 // }
- void main(){
- 
+void main() {
   markSheet();
 }
- marks(){
- int randomNumber = Random().nextInt(61) + 40;
- return randomNumber;
+
+markSheet() {
+  int isl = Random().nextInt(61) + 40;
+  int eng = Random().nextInt(61) + 40;
+  int chem = Random().nextInt(61) + 40;
+  int phy = Random().nextInt(61) + 40;
+  int math = Random().nextInt(61) + 40;
+  int urdu = Random().nextInt(61) + 40;
+  int comp = Random().nextInt(61) + 40;
+  int total=
+  print("""-----------------------------------
+| | SUBJECR  : OBTAINED : TOTAL | |
+| | NAME       MARKS      MARKS | |
+|  -----------------------------  |          
+|   Computer :  $comp      : 100     |      
+|   English  :  $eng      : 100     |    
+|   Islamiat :  $isl      : 100     |               
+|   Urdu     :  $urdu      : 100     |               
+|   Chemistry:  $chem      : 100     |            
+|   Physics  :  $phy      : 100     |            
+|   Math     :  $math      : 100     |            
+|---------------------------------
+|   Total    :
+|---------------------------------|""");
 }
-markSheet(){
-  print("""----------------------------------
-  |                              |
-  |                              |
-  |       $marks();               |
-  |                              |
-  |                              |
-  |                              |
-  |                              |
-  |                              |
-  |                              |
-  |                              |
-  |                              |
-  |                              |
-  |                              |
-  |-------------------------------""");
- }
