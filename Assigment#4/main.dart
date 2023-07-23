@@ -416,7 +416,26 @@ markSheet() {
   int urdu = Random().nextInt(61) + 40;
   int comp = Random().nextInt(61) + 40;
   int total=isl+eng+chem+phy+math+urdu+comp;
-  double percentage=
+  var prcn=(total/700)*100;
+  String? grade;
+  if(prcn>=80){
+    grade="A+";
+  }else if(prcn>=70 && prcn<80){
+    grade="A";
+  }else if(prcn>=60 && prcn<70){
+    grade="B";
+  }else if(prcn>=60 && prcn<70){
+    grade="B";
+  }
+
+
+
+
+
+
+
+
+
   print("""-----------------------------------
 | | SUBJECR  : OBTAINED : TOTAL | |
 | | NAME       MARKS      MARKS | |
