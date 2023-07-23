@@ -181,6 +181,7 @@ teacherSignUp() {
       passwordsMap[userName] = stdin.readLineSync();
       teacherMap[userName] = teacherDetail;
       teacherDetail = {};
+      print("$userName added as teacher");
       IsBool = false;
     }
   }
@@ -234,7 +235,7 @@ showTeachersDetail() {
     });
   } else {
     print("=====================================");
-    print("No any student enrolled.");
+    print("No any Teacher enrolled.");
   }
   print("=====================================");
 }
@@ -263,7 +264,7 @@ deletTeacher() {
 }
 
 deletStudent() {
-  print("Please enter student roll number for delete teacher data.");
+  print("Please enter student roll number for delete student data.");
   var studentDelete = stdin.readLineSync();
   studentMap.remove(studentDelete);
   passwordsMap.remove(studentDelete);
@@ -283,7 +284,7 @@ editTeacherDetail() {
       print("This is $userName detail.");
       teacherMap[userName].forEach((key, val) => {print("$key : $val")});
       print("=========================");
-      print("Write The perimetr which you want to edit in your detail.");
+      print("Write The parameter which you want to edit in teacher detail.");
       while (isTrue) {
         var edit = stdin.readLineSync();
         if (edit == "0") {
@@ -293,7 +294,7 @@ editTeacherDetail() {
           teacherMap[userName][edit] = stdin.readLineSync();
           print("In $edit Edtion is Done.");
           print(
-              "Write down another perimetr if you want to edit in your detail\nPress 0 if you done edition.");
+              "Write down another parameter if you want to edit in teacher detail\nPress 0 if you done edition.");
         }
       }
       flag = false;
@@ -316,7 +317,7 @@ editStudentDetail() {
       print("This is the detail of student heaving roll number $userName.");
       studentMap[userName].forEach((key, val) => {print("$key : $val")});
       print("=========================");
-      print("Write The perimetr which you want to edit in your detail.");
+      print("Write The perimetr which you want to edit in Student detail.");
       while (isTrue) {
         var edit = stdin.readLineSync();
         if (edit == "0") {
@@ -326,7 +327,7 @@ editStudentDetail() {
           studentMap[userName][edit] = stdin.readLineSync();
           print("In $edit Edtion is Done.");
           print(
-              "Write down another perimetr if you want to edit in your detail\nPress 0 if you done edition.");
+              "Write down another perimetr if you want to edit in Student detail\nPress 0 if you done edition.");
         }
       }
       flag = false;
