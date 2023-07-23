@@ -1,5 +1,5 @@
 import 'dart:io';
-
+import 'dart:math';
 Map teacherMap = {};
 Map teacherDetail = {};
 Map studentMap = {};
@@ -377,6 +377,11 @@ viewStudent() {
     }
   }
 }
+marks(){
+ int randomNumber = Random().nextInt(61) + 40;
+ return randomNumber;
+}
+markSheet
 
 Exit() {
   print("You are exit");
