@@ -415,7 +415,8 @@ markSheet() {
   int math = Random().nextInt(61) + 40;
   int urdu = Random().nextInt(61) + 40;
   int comp = Random().nextInt(61) + 40;
-  int total=
+  int total=isl+eng+chem+phy+math+urdu+comp;
+  double percentage=
   print("""-----------------------------------
 | | SUBJECR  : OBTAINED : TOTAL | |
 | | NAME       MARKS      MARKS | |
@@ -427,7 +428,7 @@ markSheet() {
 |   Chemistry:  $chem      : 100     |            
 |   Physics  :  $phy      : 100     |            
 |   Math     :  $math      : 100     |            
-|---------------------------------
-|   Total    :
+|   _________________________     | 
+|   Total    :  $total     : 700     |
 |---------------------------------|""");
 }
