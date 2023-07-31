@@ -9,7 +9,7 @@ class Student{
       this.name=myName;
       this.adress=myAdress;
       this.age=myAge;
-      this.roll=myRoll;
+       this.roll=myRoll;
   }
 
 }

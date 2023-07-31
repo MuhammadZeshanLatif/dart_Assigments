@@ -164,7 +164,7 @@ teacherSignUp() {
     String userName = stdin.readLineSync().toString();
     if (teacherMap.containsKey(userName) || userName == "Admin") {
       print(
-          "The user $userName is already exist please enter name with special character or number like '$userName'123 OR\nPress 0 to exit");
+          "The user $userName is already exist please enter name with special character or number like Zeeshan123 OR\nPress 0 to exit");
       if (userName == "0") {
         Exit();
       }
