@@ -20,6 +20,6 @@ class Student{
 
   Home(this.name,this.area,this.color);
   void detail(){
-    print("Col");
+    print("Color=");
   }
  }
