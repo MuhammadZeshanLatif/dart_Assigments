@@ -1,5 +1,16 @@
 // 1.Create a class Shape with a property name and a method void printName(). This class will serve as the base class for various shapes.
-import 'dart:math';
+void main() {
+  Circle cr = Circle();
+  cr.printName("Circle");
+  cr.printColor("green");
+  cr.calculateRadius(1);
+  cr.calculateArea();
+  Rectangle rc=Rectangle();
+  rc.printName("Rectangle");
+  rc.printColor("Red");
+  rc.displayInfo(1, 1);
+    rc.calculateArea();
+}
 
 class Shape {
   String? name;
@@ -19,7 +30,7 @@ mixin ColorMixin {
 }
 // 3.Create a mixin AreaMixin with a method double calculateArea(). This mixin will add area calculation functionality to shapes.
 mixin AreaMixin {
-  double? calculateArea() {}
+  calculateArea() {}
 }
 
 // 4.Create two classes Circle and Rectangle that extend the Shape class and use the ColorMixin and AreaMixin mixins appropriately. Implement necessary properties and methods for each shape.
@@ -29,14 +40,28 @@ class Circle extends Shape with ColorMixin, AreaMixin {
     this.radius = radius;
     print("Radius:$radius");
   }
+
   @override
-  calculateArea() { 
-     return 3.14159 * radius! * radius!;
+  calculateArea() {
+    print("Area: ${3.14159 * radius! * radius!}");
   }
-  
 }
 
-class Rectangle extends Shape with ColorMixin, AreaMixin {}
+class Rectangle extends Shape with ColorMixin, AreaMixin {
+  double? Height;
+  double? width;
+  displayInfo(double height,double width){
+    this.Height=height;
+    this.width=width;
+    print("Height: $Height");
+    print("Width: $width");
+  }
+  @override
+  calculateArea() {
+    print("Area:${Height! * width!}");
+  }
+
+}
 // 5.In the main function, create an instance of Circle and an instance of Rectangle. Set their properties and demonstrate the use of methods from both the Shape class and the mixins.
 
 // 6.Your implementation should showcase the use of mixins to add functionality to classes.
