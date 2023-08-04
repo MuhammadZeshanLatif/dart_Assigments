@@ -1,26 +1,19 @@
-import 'dart:svg';
-
-import 'constructor.dart';
- void main(){
-  Student std=Student("Zeeshan", "Karachi", 20, 304);
-  print(std.name);
-  print(std.adress);
-  print(std.age);
-  print(std.roll);
+void main() {
+  student std=student();
+  std.age=12;
+  std.name="Zeeshan";
+  std.displayInfo();
 }
- 
+
 // Use of mixin in dart
-mixin Person{
+mixin Person {
   String? name;
-  Number? age;
-  displayInfo(){
+  int? age;
+  displayInfo() {
     print("The name of person is $name and age is $age");
   }
 }
-class student with Person{
-   @override
-  displayInfo() {
+
+class student with Person {
   
-   return super.displayInfo();
-  }
 }
