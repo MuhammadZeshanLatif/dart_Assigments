@@ -1,19 +1,28 @@
 void main() {
-  student std=student();
-  std.age=12;
-  std.name="Zeeshan";
-  std.displayInfo();
+  displayAll dis=displayAll();
+  dis.displayAllLines("Zeeshan", 22, "Fair");
 }
 
-// Use of mixin in dart
-mixin Person {
+mixin Name {
   String? name;
+}
+mixin Age {
   int? age;
-  displayInfo() {
-    print("The name of person is $name and age is $age");
-  }
+}
+mixin Color {
+  String? color;
 }
 
-class student with Person {
-  
+abstract class Display with Name, Age {
+  _display(String namer, int ager);
+}
+
+class displayAll extends Display with Color {
+  _display(String namer, int ager) {}
+  displayAllLines(String namer, int ager,String color){
+    this.name = namer;
+    this.age = ager;
+    this.color=color;
+    print("Name:$namer \n Age:$ager\nColor:$color");
+  }
 }
